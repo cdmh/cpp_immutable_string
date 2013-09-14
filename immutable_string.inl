@@ -206,7 +206,7 @@ template<typename charT, typename Traits, typename Alloc>
 basic_immutable_string<charT, Traits, Alloc>
 basic_immutable_string<charT, Traits, Alloc>::append(basic_immutable_string const &str, size_type subpos, size_type sublen) const
 {
-    return string_ + str.string_.substr(subpos, sublen);//!!!
+    return string_ + str.string_.substr(subpos, sublen);
 }
 
 template<typename charT, typename Traits, typename Alloc>
