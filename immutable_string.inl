@@ -871,7 +871,7 @@ operator+(Char lhs, basic_immutable_string<Char, traits, Alloc> const &rhs)
     return basic_immutable_string<Char, traits, Alloc>(lhs).append(rhs);
 }
 
-template<typename Char, class traits, class Alloc>
+template<typename Char, typename traits, typename Alloc>
 std::basic_ostream<Char, traits> &operator<<(std::basic_ostream<Char, traits>& os, basic_immutable_string<Char, traits, Alloc> const &str)
 {
     os << str.mutable_string();
