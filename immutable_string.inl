@@ -749,7 +749,7 @@ template <typename charT, typename traits, typename Alloc>
 basic_immutable_string<charT, traits, Alloc>
 operator+(std::basic_string<charT, traits, Alloc> &&lhs, basic_immutable_string<charT, traits, Alloc> &&rhs)
 {
-    return lhs + std::forward<basic_immutable_string<charT, traits, Alloc>>(rhs);
+    return lhs.append(rhs.c_str());
 }
 
 template <typename charT, typename traits, typename Alloc>
@@ -791,7 +791,7 @@ template <typename charT, typename traits, typename Alloc>
 basic_immutable_string<charT, traits, Alloc>
 operator+(std::basic_string<charT, traits, Alloc> const &lhs, basic_immutable_string<charT, traits, Alloc> &&rhs)
 {
-    return lhs + rhs.c_str();
+    return lhs.append(rhs.c_str());
 }
 
 template <typename charT, typename traits, typename Alloc>
@@ -812,7 +812,7 @@ template <typename charT, typename traits, typename Alloc>
 basic_immutable_string<charT, traits, Alloc>
 operator+(std::basic_string<charT, traits, Alloc> &&lhs, basic_immutable_string<charT, traits, Alloc> const &rhs)
 {
-    return lhs + rhs;
+    return lhs.append(rhs.c_str());
 }
 
 template <typename charT, typename traits, typename Alloc>
