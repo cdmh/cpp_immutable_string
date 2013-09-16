@@ -245,7 +245,7 @@ basic_immutable_string<Char, Traits, Alloc>::append(Char c) const
 }
 
 template<typename Char, typename Traits, typename Alloc>
-template <class InputIterator>
+template<typename InputIterator>
 basic_immutable_string<Char, Traits, Alloc>
 basic_immutable_string<Char, Traits, Alloc>::append(InputIterator first, InputIterator last) const
 {
@@ -331,7 +331,7 @@ basic_immutable_string<Char, Traits, Alloc>::insert(const_iterator p, Char c) co
 }
 
 template<typename Char, typename Traits, typename Alloc>
-template <class InputIterator>
+template<typename InputIterator>
 basic_immutable_string<Char, Traits, Alloc>
 basic_immutable_string<Char, Traits, Alloc>::insert(const_iterator p, InputIterator first, InputIterator last) const
 {
@@ -490,7 +490,7 @@ basic_immutable_string<Char, Traits, Alloc>::replace(const_iterator i1, const_it
 }
 
 template<typename Char, typename Traits, typename Alloc>
-template <class InputIterator>
+template<typename InputIterator>
 basic_immutable_string<Char, Traits, Alloc>
 basic_immutable_string<Char, Traits, Alloc>::replace(const_iterator i1, const_iterator i2,
                                                       InputIterator first, InputIterator last) const
@@ -871,7 +871,7 @@ operator+(Char lhs, basic_immutable_string<Char, traits, Alloc> const &rhs)
     return basic_immutable_string<Char, traits, Alloc>(lhs).append(rhs);
 }
 
-template <class Char, class traits, class Alloc>
+template<typename Char, class traits, class Alloc>
 std::basic_ostream<Char, traits> &operator<<(std::basic_ostream<Char, traits>& os, basic_immutable_string<Char, traits, Alloc> const &str)
 {
     os << str.mutable_string();

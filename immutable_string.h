@@ -99,7 +99,7 @@ class basic_immutable_string
     basic_immutable_string(Char c, allocator_type const &alloc = allocator_type()) : string_(1, c, alloc)                     { }
 
     // range
-    template <class InputIterator>
+    template<typename InputIterator>
     basic_immutable_string(InputIterator first, InputIterator last,
                            allocator_type const &alloc = allocator_type()) : string_(first, last, alloc)                       { }
 #if HAS_INITIALIZER_LIST
@@ -165,7 +165,7 @@ class basic_immutable_string
     basic_immutable_string append(Char const * const s, size_type n)                                         const;    // buffer
     basic_immutable_string append(size_type n, Char c)                                                       const;    // fill
     basic_immutable_string append(Char c)                                                                    const;
-    template <class InputIterator>                                                                           
+    template<typename InputIterator>                                                                           
     basic_immutable_string append(InputIterator first, InputIterator last)                                   const;    // range
 #if HAS_INITIALIZER_LIST                                                                                     
     basic_immutable_string append(std::initializer_list<Char> il)                                            const;    // initializer list
@@ -182,7 +182,7 @@ class basic_immutable_string
     basic_immutable_string insert(size_type pos,   size_type n, Char c)                                      const;    // fill
     basic_immutable_string insert(const_iterator p, size_type n, Char c)                                     const;    // fill
     basic_immutable_string insert(const_iterator p, Char c)                                                  const;    // single character
-    template <class InputIterator>                                                                           
+    template<typename InputIterator>                                                                           
     basic_immutable_string insert(const_iterator p, InputIterator first, InputIterator last)                 const;    // range
 #if HAS_INITIALIZER_LIST                                                                                     
     basic_immutable_string insert(const_iterator p, std::initializer_list<Char> il)                          const;    // initializer list
@@ -217,7 +217,7 @@ class basic_immutable_string
     basic_immutable_string replace(size_type pos,     size_type len,     size_type n, Char c)                const;    // fill
     basic_immutable_string replace(const_iterator i1, const_iterator i2, size_type n, Char c)                const;    // fill
                                                                                                              
-    template <class InputIterator>                                                                           
+    template<typename InputIterator>                                                                           
     basic_immutable_string replace(const_iterator i1, const_iterator i2,                                     
                                    InputIterator first, InputIterator last)                                  const;    // range
                                                                                                              
