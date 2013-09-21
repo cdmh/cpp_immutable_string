@@ -228,7 +228,7 @@ class basic_immutable_string
                                                                                                              
     Char const * const c_str(void)                                                                           const noexcept { return string_.c_str();         }
     Char const * const data(void)                                                                            const noexcept { return string_.data();          }
-    std::string    mutable_string(void)                                                                      const          { return string_;                 }
+    std::basic_string<Char, Traits, Alloc> mutable_string(void)                                              const          { return string_;                 }
     allocator_type get_allocator(void)                                                                       const noexcept { return string_.get_allocator(); }
     size_type const copy(Char* s, size_type len, size_type pos)                                              const          { return string_.copy(s,len,pos); }
 
@@ -283,6 +283,9 @@ class basic_immutable_string
 };
 
 typedef basic_immutable_string<char> immutable_string;
+typedef basic_immutable_string<wchar_t> immutable_wstring;
+typedef basic_immutable_string<char16_t> immutable_u16string;
+typedef basic_immutable_string<char32_t> immutable_u32string;
 
 }   // namespace cdmh
 
